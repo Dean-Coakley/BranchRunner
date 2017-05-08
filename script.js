@@ -4,7 +4,7 @@ MAX = 99;
 onload = function update() {
     requestAnimationFrame(update);
 
-    //init. This is very bad if running for a long time.
+    //init. This is very bad if running for a long time. No cleanup
     if (!window.time) {
         time = 0;
         frame = 0;
@@ -31,10 +31,8 @@ onload = function update() {
             console.log(branch.y);
         })
 
-
     }
-
-    //render gfx
+    //gfx
     height = background.height = 512;
     width = background.width = 0 | height * innerWidth / innerHeight;
     can.translate(width/2, height/2);
@@ -53,6 +51,4 @@ onload = function update() {
         }
         can.stroke();
     })
-
-
 }
